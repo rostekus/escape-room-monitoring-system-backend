@@ -9,7 +9,7 @@ import java.util.List;
 @Configuration
 public class GameMasterConfig {
     @Bean
-    CommandLineRunner commandLineRunner(GameMasterReposiroty gameMasterReposiroty) {
+    CommandLineRunner commandLineRunner(GameMasterRepository gameMasterRepository) {
         return args -> {
             GameMaster gm1 = new GameMaster(
                     "John",
@@ -23,7 +23,7 @@ public class GameMasterConfig {
                     "hello1@gmail.com",
                     "john1"
             );
-            gameMasterReposiroty.saveAll(
+            gameMasterRepository.saveAll(
                     List.of(gm1, gm2)
             );
         };
