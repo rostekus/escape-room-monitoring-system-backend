@@ -1,15 +1,17 @@
 package com.rostekus.app.gamemaster;
 
-import java.util.UUID;
-
+import com.rostekus.app.game.Game;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+import java.util.UUID;
+
 @Entity(name = "gamemaster")
 @Getter
 @Setter
-public class GameMaster {
+public class GameMaster implements Cloneable {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(
@@ -33,6 +35,10 @@ public class GameMaster {
     )
     private String username;
 
+
+    @OneToMany(mappedBy = "gameMaster", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Game> games;
+
     public GameMaster() {
     }
 
@@ -44,13 +50,15 @@ public class GameMaster {
     }
 
     @Override
-    public String toString() {
-        return "GameMaster{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", passwordHash='" + passwordHash + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                '}';
+    public GameMaster clone() {
+        try {
+            GameMaster clone = (GameMaster) super.clone();
+            // Clone any mutable fields here
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
 }
