@@ -1,4 +1,4 @@
-package com.rostekus.app.gamemaster;
+package org.rostekus.gamemaster;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +9,7 @@ import java.util.List;
 @Configuration
 public class GameMasterConfig {
     @Bean
-    CommandLineRunner commandLineRunner(GameMasterRepository gameMasterRepository) {
+    CommandLineRunner commandLineRunnerGameMaster(GameMasterRepository gameMasterRepository) {
         return args -> {
             GameMaster gm1 = new GameMaster(
                     "John",

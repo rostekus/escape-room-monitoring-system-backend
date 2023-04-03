@@ -1,12 +1,13 @@
-package com.rostekus.app.gamemaster;
+package org.rostekus.gamemaster;
 
-import com.rostekus.app.game.Game;
+import org.rostekus.game.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
+
 
 @RestController
 @RequestMapping(path = "api/v1/gamemasters")
@@ -30,7 +31,7 @@ public class GameMasterController {
     public void registerNewGameMaster(@RequestBody GameMaster gm) {
         gameMasterService.addNewGameMaster(gm);
     }
-
+    //  ==========================================================
     @GetMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK, reason = "OK")
     public GameMaster getGameMasterById(@PathVariable UUID id) {
@@ -42,10 +43,22 @@ public class GameMasterController {
     public void deleteGameMaster(@PathVariable UUID id) {
         gameMasterService.deleteGameMasterById(id);
     }
-
+    //  ==========================================================
     @GetMapping("/{id}/games")
     @ResponseStatus(code = HttpStatus.OK, reason = "OK")
     public List<Game> getGamesByGameMasterId(@PathVariable UUID id) {
         return gameMasterService.getAllGamesForGameMaster(id);
     }
+    @PostMapping("/{id}/games")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT, reason = "OK")
+    public void addGameForGameMaster(@PathVariable UUID id, @RequestBody Game g){
+        gameMasterService.addGameForGameMaster(id, g);
+    }
+
+    @GetMapping("/{id}/games/current")
+    public List<Game> getCurrentGameMasterGames(@PathVariable UUID id){
+        return gameMasterService.getCurrentGameMasterGames(id);
+    }
+
+
 }

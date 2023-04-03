@@ -1,6 +1,6 @@
-package com.rostekus.app.gamemaster;
+package org.rostekus.gamemaster;
 
-import com.rostekus.app.game.Game;
+import org.rostekus.game.Game;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

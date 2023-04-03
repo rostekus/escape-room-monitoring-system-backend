@@ -1,7 +1,7 @@
-package com.rostekus.app.gamemaster;
+package org.rostekus.gamemaster;
 
-import com.rostekus.app.game.Game;
-import com.rostekus.app.game.GameRepository;
+import org.rostekus.game.Game;
+import org.rostekus.game.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,4 +50,18 @@ public class GameMasterService {
     }
 
 
+    public List<Game> getCurrentGameMasterGames(UUID id) {
+        long currentTime = System.currentTimeMillis() / 1000;
+        return gameRepository.getGamesWithEndTimestampLessThenNow(currentTime);
+    }
+
+    public void addGameForGameMaster(UUID id, Game g) {
+        Optional<GameMaster> gm = gameMasterRepository.findById(id);
+
+         if (gm.isEmpty()) {
+            throw new IllegalStateException("gamemaster does not exit");
+        }
+        g.setGameMaster(gm.get());
+        gameRepository.save(g);
+    }
 }
