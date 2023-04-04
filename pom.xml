@@ -57,6 +57,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+            <finalName>escape-room-api</finalName>
     </build>
 
 </project>
