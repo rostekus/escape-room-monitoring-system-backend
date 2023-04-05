@@ -52,9 +52,7 @@ public class GameMaster implements Cloneable {
     @Override
     public GameMaster clone() {
         try {
-            GameMaster clone = (GameMaster) super.clone();
-            // Clone any mutable fields here
-            return clone;
+            return (GameMaster) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new RuntimeException(e);
         }
