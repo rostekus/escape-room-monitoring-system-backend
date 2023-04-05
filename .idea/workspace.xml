@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="719f2bb1-8c9c-4745-9440-5884d7746f28" name="Changes" comment="feat: gamemaster config, inital insert into db">
+    <list default="true" id="719f2bb1-8c9c-4745-9440-5884d7746f28" name="Changes" comment="docs: updated readme">
       <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.template" beforeDir="false" afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,20 +68,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rostyslavmosorov/Desktop/escape-room-monitoring-system-backend",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rostyslavmosorov/Desktop/escape-room-monitoring-system-backend&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -86,7 +89,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.rostekus.app.AppApplication" />
+      <option name="MAIN_CLASS_NAME" value="org.rostekus.Main" />
       <module name="app" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -150,7 +153,42 @@
       <option name="project" value="LOCAL" />
       <updated>1680214309398</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="build: github actions - build image">
+      <created>1680632318087</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680632318087</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix: github action docker image tag name">
+      <created>1680632767263</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680632767264</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: github action docker image tag name">
+      <created>1680633239718</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680633239718</updated>
+    </task>
+    <task id="LOCAL-00009" summary="build: multistage docker build">
+      <created>1680634553866</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680634553866</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docs: updated readme">
+      <created>1680636916171</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680636916171</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -174,6 +212,10 @@
     <MESSAGE value="feat: gamemaster service class" />
     <MESSAGE value="feat: gamemaster controller class" />
     <MESSAGE value="feat: gamemaster config, inital insert into db" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: gamemaster config, inital insert into db" />
+    <MESSAGE value="build: github actions - build image" />
+    <MESSAGE value="fix: github action docker image tag name" />
+    <MESSAGE value="build: multistage docker build" />
+    <MESSAGE value="docs: updated readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: updated readme" />
   </component>
 </project>
