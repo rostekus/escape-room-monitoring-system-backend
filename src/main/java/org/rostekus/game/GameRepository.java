@@ -13,5 +13,6 @@ public interface GameRepository extends JpaRepository<Game, UUID> {
     List<Game> findByGameMasterId(UUID gameMasterId);
     @Query("SELECT g FROM game g WHERE g.endTimestamp > :currTime")
     List<Game> getGamesWithEndTimestampLessThenNow(@Param("currTime") long currTime);
-
+    @Query("SELECT g FROM game g WHERE g.gameMaster.id = :id")
+    List<Game> findAllGamesForGameMasterId(@Param("id") UUID id);
 }
