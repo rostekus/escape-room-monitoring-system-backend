@@ -1,5 +1,5 @@
 # escape-room-monitoring-system-backend
-
+[![Create and publish a Docker image](https://github.com/rostekus/escape-room-monitoring-system-backend/actions/workflows/ci.yaml/badge.svg)](https://github.com/rostekus/escape-room-monitoring-system-backend/actions/workflows/ci.yaml)
 ## Build and Run 
 - Clone the repository:
 ```bash
