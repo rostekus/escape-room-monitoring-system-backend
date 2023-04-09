@@ -1,4 +1,4 @@
-package org.rostekus.gamemaster;
+package org.rostekus.user;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -7,24 +7,24 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class GameMasterConfig {
+public class UserConfig {
     @Bean
-    CommandLineRunner commandLineRunnerGameMaster(GameMasterRepository gameMasterRepository) {
+    CommandLineRunner commandLineRunnerGameMaster(UserRepository userRepository) {
         return args -> {
-            GameMaster gm1 = new GameMaster(
+            User u1 = new User(
                     "John",
                     "ddddd",
                     "hello@gmail.com",
-                    "john"
+                    Role.USER
             );
-            GameMaster gm2 = new GameMaster(
+            User u2 = new User(
                     "John",
                     "ddddd",
                     "hello1@gmail.com",
-                    "john1"
+                    Role.ADMIN
             );
-            gameMasterRepository.saveAll(
-                    List.of(gm1, gm2)
+            userRepository.saveAll(
+                    List.of(u1, u2)
             );
         };
     }
