@@ -1,11 +1,11 @@
 package org.rostekus.game;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.rostekus.gamemaster.GameMaster;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.rostekus.user.User;
 
 import java.util.UUID;
 
@@ -35,7 +35,7 @@ public class Game {
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "gm_id")
-    private GameMaster gameMaster;
+    private User gameMaster;
 
     public Game() {
     }
@@ -46,7 +46,7 @@ public class Game {
         this.endTimestamp = endTimestamp;
     }
 
-    public Game(String name, long startTimestamp, long endTimestamp, GameMaster gameMaster) {
+    public Game(String name, long startTimestamp, long endTimestamp, User gameMaster) {
         this.name = name;
         this.startTimestamp = startTimestamp;
         this.endTimestamp = endTimestamp;

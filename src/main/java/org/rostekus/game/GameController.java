@@ -2,8 +2,10 @@ package org.rostekus.game;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import org.rostekus.game.GameService;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -19,14 +21,16 @@ public class GameController {
 
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK, reason = "OK")
-    public List<Game> getGame(){
+    public List<Game> getGame() {
         return gameService.getAllGame();
     }
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public void postGame(@RequestBody Game g){
-        gameService.addNewGame(g);
+    public void postGame(@RequestBody Game g) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UUID gamemasterId = UUID.fromString(authentication.getName());
+        gameService.addNewGame(g, gamemasterId);
     }
 
     //  ==========================================================
@@ -35,9 +39,12 @@ public class GameController {
     public Game getGameById(@PathVariable UUID id) {
         return gameService.getGameById(id);
     }
+
     @PostMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    public void deleteGame(@PathVariable UUID id) {gameService.deleteGameMasterById(id);}
+    public void deleteGame(@PathVariable UUID id) {
+        gameService.deleteGameMasterById(id);
+    }
 
     @GetMapping("/gamemasters/{id}")
     @ResponseStatus(code = HttpStatus.OK, reason = "OK")
@@ -46,7 +53,7 @@ public class GameController {
     }
 
     @GetMapping("/gamemasters/{id}/current")
-    public List<Game> getCurrentGameMasterGames(@PathVariable UUID id){
+    public List<Game> getCurrentGameMasterGames(@PathVariable UUID id) {
         return gameService.getCurrentGamesForGameMasterById(id);
     }
 }
