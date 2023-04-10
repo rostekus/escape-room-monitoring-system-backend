@@ -18,6 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -46,14 +47,12 @@ public class AuthenticationService {
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
-                        request.getPassword()
-                )
-        );
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow();
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                       user.getId(),
+                        request.getPassword()));
         var jwtToken = jwtService.generateToken(user);
         var refreshToken = jwtService.generateRefreshToken(user);
         revokeAllUserTokens(user);
@@ -88,18 +87,17 @@ public class AuthenticationService {
 
     public void refreshToken(
             HttpServletRequest request,
-            HttpServletResponse response
-    ) throws Exception {
+            HttpServletResponse response) throws Exception {
         final String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         final String refreshToken;
-        final String userEmail;
+        final String userId;
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
             throw new Exception("Invalid email");
         }
         refreshToken = authHeader.substring(7);
-        userEmail = jwtService.extractUsername(refreshToken);
-        if (userEmail != null) {
-            var user = this.repository.findByEmail(userEmail).orElse(new User());
+        userId = jwtService.extractUsername(refreshToken);
+        if (userId != null) {
+            var user = this.repository.findById(UUID.fromString(userId)).orElse(new User());
             if (jwtService.isTokenValid(refreshToken, user)) {
                 var accessToken = jwtService.generateToken(user);
                 revokeAllUserTokens(user);
