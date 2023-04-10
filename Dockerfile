@@ -6,3 +6,4 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM eclipse-temurin:17-jdk-focal
 COPY --from=build  /home/app/target/escape-room-api.jar escape-room-api.jar
 EXPOSE 8080
+ENTRYPOINT ["java", "-jar", "escape-room-api.jar"]
