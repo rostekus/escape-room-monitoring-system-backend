@@ -1,14 +1,17 @@
 package org.rostekus.game;
 
+import org.rostekus.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
+
 @Service
 public class GameService {
 
     public final GameRepository gameRepository;
+
     @Autowired
     public GameService(GameRepository gameRepository) {
         this.gameRepository = gameRepository;
@@ -18,7 +21,9 @@ public class GameService {
         return gameRepository.findAll();
     }
 
-    public void addNewGame(Game g) {
+    public void addNewGame(Game g, UUID gamemasterId) {
+        User gm = User.builder().id(gamemasterId).build();
+        g.setGameMaster(gm);
         gameRepository.save(g);
     }
 
@@ -31,7 +36,7 @@ public class GameService {
     }
 
     public List<Game> getALlGamesForGameMasterById(UUID id) {
-       return gameRepository.findAllGamesForGameMasterId(id);
+        return gameRepository.findAllGamesForGameMasterId(id);
     }
 
     public List<Game> getCurrentGamesForGameMasterById(UUID id) {
