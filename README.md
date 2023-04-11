@@ -1,6 +1,6 @@
 # escape-room-monitoring-system-backend
 
-## Build and Run 
+## Build and Run
 - Clone the repository:
 ```bash
   git clone https://github.com/rostekus/escape-room-monitoring-system-backend
@@ -20,11 +20,11 @@
 ```
 - To build, run:
 ```bash
-  docker-compose build 
+  docker-compose build
 ```
 - To run the containers, use:
 ```bash
-  docker-compose up 
+  docker-compose up
 ```
 
 ## Development
@@ -37,7 +37,7 @@ Then, use Maven to build the project. You need to specify the environment variab
 
 Note that, then you need to change database URI to:
 ```bash
-  jdbc:postgres:/localhost:5432/escaperoom
+  jdbc:postgresql://localhost:5432/escaperoom
 ```
 Now, you can use your IDE to build and run the project, or you can use Maven with the following command:
 ```bash
@@ -49,5 +49,5 @@ If the build is successful, navigate to the target directory:
 ```
 Run the JAR file using the following command:
 ```bash
-  java -jar escape-room-api.jar 
+  java -jar escape-room-api.jar
 ```
