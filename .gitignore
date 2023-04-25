@@ -197,3 +197,4 @@ app/src/main/resources/application.properties
 .idea/jarRepositories.xml
 .idea/encodings.xml
 .idea/compiler.xml
+.env

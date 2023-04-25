@@ -20,7 +20,6 @@ public class GameController {
     }
 
     @GetMapping
-    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
     public List<Game> getGame() {
         return gameService.getAllGame();
     }
@@ -29,13 +28,13 @@ public class GameController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public void postGame(@RequestBody Game g) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UUID gamemasterId = UUID.fromString(authentication.getName());
-        gameService.addNewGame(g, gamemasterId);
+        String gamemasterEmail =authentication.getName();
+        gameService.addNewGame(g, gamemasterEmail);
     }
 
     //  ==========================================================
     @GetMapping("/{id}")
-    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
+    @ResponseStatus(code = HttpStatus.OK)
     public Game getGameById(@PathVariable UUID id) {
         return gameService.getGameById(id);
     }
@@ -46,14 +45,14 @@ public class GameController {
         gameService.deleteGameMasterById(id);
     }
 
-    @GetMapping("/gamemasters/{id}")
-    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
-    public List<Game> getALlGamesForGameMasterById(@PathVariable UUID id) {
-        return gameService.getALlGamesForGameMasterById(id);
+    @GetMapping("/gamemasters")
+    @ResponseStatus(code = HttpStatus.OK)
+    public List<Game> getALlGamesForGameMasterById() {
+        return gameService.getAllGame();
     }
 
-    @GetMapping("/gamemasters/{id}/current")
-    public List<Game> getCurrentGameMasterGames(@PathVariable UUID id) {
-        return gameService.getCurrentGamesForGameMasterById(id);
-    }
+//    @GetMapping("/gamemasters/{id}/current")
+//    public List<Game> getCurrentGameMasterGames(@PathVariable UUID id) {
+//        return gameService.getCurrentGamesForGameMasterById(id);
+//    }
 }
