@@ -1,6 +1,6 @@
-package com.alibou.security.config;
+package org.rostekus.config;
 
-import com.alibou.security.token.TokenRepository;
+import org.rostekus.token.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

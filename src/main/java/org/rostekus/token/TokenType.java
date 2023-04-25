@@ -1,4 +1,4 @@
-package com.alibou.security.token;
+package org.rostekus.token;
 
 public enum TokenType {
   BEARER

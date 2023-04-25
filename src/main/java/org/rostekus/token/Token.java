@@ -1,6 +1,6 @@
-package com.alibou.security.token;
+package org.rostekus.token;
 
-import com.alibou.security.user.User;
+import org.rostekus.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

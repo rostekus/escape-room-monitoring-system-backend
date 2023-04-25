@@ -1,6 +1,6 @@
-package com.alibou.security.config;
+package org.rostekus.config;
 
-import com.alibou.security.user.UserRepository;
+import org.rostekus.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

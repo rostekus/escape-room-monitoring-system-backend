@@ -1,4 +1,4 @@
-package com.alibou.security.user;
+package org.rostekus.user;
 
 public enum Role {
 
