@@ -5,16 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="719f2bb1-8c9c-4745-9440-5884d7746f28" name="Changes" comment="docs: updated readme">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.template" beforeDir="false" afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/demo/DemoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/auth/RegisterRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/config/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/config/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/config/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/config/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/config/LogoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/config/LogoutService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/gamemaster/GameMasterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/game/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/token/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/token/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/token/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/token/TokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/token/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/token/TokenType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/user/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/user/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/user/UserConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/rostekus/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/rostekus/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +81,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/rostyslavmosorov/Desktop/escape-room-monitoring-system-backend&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/rostyslavmosorov/Desktop/escape-room-monitoring-system-backend/src/main/java/org/rostekus",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/rostekus" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -217,5 +231,16 @@
     <MESSAGE value="build: multistage docker build" />
     <MESSAGE value="docs: updated readme" />
     <option name="LAST_COMMIT_MESSAGE" value="docs: updated readme" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/rostekus/config/JwtAuthenticationFilter.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

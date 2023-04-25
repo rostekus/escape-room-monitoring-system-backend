@@ -1,4 +1,4 @@
-package org.rostekus.auth;
+package com.alibou.security.auth;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuthenticationRequest {
 
-    String password;
-    private String email;
+  private String email;
+  String password;
 }
