@@ -3,10 +3,7 @@ package org.rostekus.hint;
 import org.rostekus.game.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -35,9 +32,8 @@ public class HintController {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteHint(@PathVariable UUID id) { hintService.deleteHintById(id); }
 
-    /*@GetMapping("/game/{id}")
+    @GetMapping("/game/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public List<Hint> getAllHintsForGameId(@PathVariable UUID id) { return hintService.getAllHintsForGame(id); }
-*/
 }
 

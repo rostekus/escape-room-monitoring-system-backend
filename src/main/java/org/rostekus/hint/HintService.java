@@ -34,8 +34,8 @@ public class HintService {
         hintRepository.deleteById(id);
     }
 
-    /*public List<Hint> getAllHintsForGame() {
+    public List<Hint> getAllHintsForGame(UUID gameId) {
         return hintRepository.findAllHintsByGameId(gameId);
-    }*/
+    }
 
 }
