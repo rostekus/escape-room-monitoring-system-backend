@@ -39,7 +39,7 @@ public class GameController {
         return gameService.getGameById(id);
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteGame(@PathVariable UUID id) {
         gameService.deleteGameMasterById(id);

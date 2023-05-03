@@ -18,24 +18,26 @@ public class HintController {
     @Autowired HintController(HintService hintService) { this.hintService = hintService; }
 
     @GetMapping
-    public List<Hint> getHint() { return hintService.getAllHints(); }
+    public List<Hint> getAllHints() { return hintService.getAllHints(); }
 
-    @PostMapping
+    @PostMapping(path = "/games/{id}")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void postHint(@RequestBody Hint h, @PathVariable UUID id) {
         Game g = hintService.gameRepository.findById(id).orElse(null);
-        hintService.addNewHint(h, g.getId());
+        hintService.addNewHint(h, g);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public Hint getHintById(@PathVariable UUID id) { return hintService.getHintById(id); }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteHint(@PathVariable UUID id) { hintService.deleteHintById(id); }
 
-    @GetMapping("/{game}")
+    /*@GetMapping("/game/{id}")
     @ResponseStatus(code = HttpStatus.OK)
-    public List<Hint> getAllHintsId(@PathVariable UUID id) { return hintService.getAllHintsForGame(id); }
+    public List<Hint> getAllHintsForGameId(@PathVariable UUID id) { return hintService.getAllHintsForGame(id); }
+*/
 }
+

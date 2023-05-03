@@ -21,9 +21,8 @@ public class HintService {
 
     public List<Hint> getAllHints() { return hintRepository.findAll(); }
 
-    public void addNewHint(Hint h, UUID gameId) {
-        Game g = gameRepository.findById(gameId).orElse(null);
-        h.setGame(g);
+    public void addNewHint(Hint h, Game game) {
+        h.setGame(game);
         hintRepository.save(h);
     }
 
@@ -35,8 +34,8 @@ public class HintService {
         hintRepository.deleteById(id);
     }
 
-    public List<Hint> getAllHintsForGame(UUID gameId) {
+    /*public List<Hint> getAllHintsForGame() {
         return hintRepository.findAllHintsByGameId(gameId);
-    }
+    }*/
 
 }

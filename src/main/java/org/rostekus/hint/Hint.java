@@ -24,22 +24,18 @@ public class Hint {
     @Column(name = "hint_name",
             nullable = false)
     private String name;
-    @Column(name = "game_id",
-            nullable = false)
-    private UUID gameId;
     @Column(name = "hint_text",
             nullable = false)
     private String hint_text;
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "gm_id")
+    @JoinColumn(name = "game_id")
     private Game game;
     public Hint() {
 
     }
-    public Hint(String name, UUID gameId, String text, Game game) {
+    public Hint(String name, String text, Game game) {
         this.name = name;
-        this.gameId = gameId;
         this.hint_text = text;
         this.game = game;
     }

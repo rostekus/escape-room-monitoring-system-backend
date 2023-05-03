@@ -11,6 +11,6 @@ import java.util.UUID;
 @Repository
 public interface HintRepository extends JpaRepository<Hint, UUID> {
 
-    @Query("SELECT h FROM hint h WHERE h.gameId = :id")
+    @Query("SELECT h FROM hint h WHERE h.game.id = :id")
     List<Hint> findAllHintsByGameId(@Param("id") UUID id);
 }

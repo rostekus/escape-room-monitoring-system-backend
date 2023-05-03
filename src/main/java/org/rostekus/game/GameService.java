@@ -14,12 +14,10 @@ public class GameService {
 
     public final GameRepository gameRepository;
     public final UserRepository userRepository;
-    public final HintRepository hintRepository;
     @Autowired
-    public GameService(GameRepository gameRepository, UserRepository userRepository, HintRepository hintRepository) {
+    public GameService(GameRepository gameRepository, UserRepository userRepository) {
         this.gameRepository = gameRepository;
         this.userRepository = userRepository;
-        this.hintRepository = hintRepository;
     }
 
     public List<Game> getAllGame() {
@@ -50,7 +48,4 @@ public class GameService {
         return gameRepository.getGamesWithEndTimestampLessThenNow(currentTime);
     }
 
-    //public List<Hint> getHintToUserById(UUID id) {
-      //  return hintRepository.getHintWithTheRequestedId(id);
-    //}
 }
