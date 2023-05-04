@@ -1,5 +1,6 @@
 package org.rostekus.game;
 
+import org.rostekus.hint.HintRepository;
 import org.rostekus.user.User;
 import org.rostekus.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +47,5 @@ public class GameService {
         long currentTime = System.currentTimeMillis() / 1000;
         return gameRepository.getGamesWithEndTimestampLessThenNow(currentTime);
     }
+
 }
