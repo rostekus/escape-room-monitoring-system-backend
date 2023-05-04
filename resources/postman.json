@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "ff0ad297-d670-4c35-82fb-35053c6591c5",
+		"_postman_id": "e4e72ffb-f07d-4acb-9ad8-78ea8cddd4dc",
 		"name": "Escape room",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20033428"
+		"_exporter_id": "26844601",
+		"_collection_link": "https://lively-robot-795768.postman.co/workspace/TP~ce80ca40-889a-464b-a699-d14ab2f7afb6/collection/26844601-e4e72ffb-f07d-4acb-9ad8-78ea8cddd4dc?action=share&creator=26844601&source=collection_link"
 	},
 	"item": [
 		{
@@ -183,6 +184,30 @@
 						"games"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllHints",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Hint",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Find hint by gameid",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}

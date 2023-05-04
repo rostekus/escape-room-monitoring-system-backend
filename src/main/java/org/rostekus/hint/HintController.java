@@ -32,7 +32,7 @@ public class HintController {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void deleteHint(@PathVariable UUID id) { hintService.deleteHintById(id); }
 
-    @GetMapping("/game/{id}")
+    @GetMapping("/games/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public List<Hint> getAllHintsForGameId(@PathVariable UUID id) { return hintService.getAllHintsForGame(id); }
 }
